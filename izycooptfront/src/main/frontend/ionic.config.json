@@ -1,0 +1,7 @@
+{
+  "name": "izycooptfront",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
