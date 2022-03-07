@@ -9,27 +9,6 @@
 #
 # docker run -i --rm -p 8081:8081 springboot/sample-izycooptBack
 ####
-FROM node:current-slim
-
-WORKDIR /usr/src/app
-
-#### copy both 'package.json' and 'package-lock.json' (if available)
-COPY package*.json ./
-
-#### install angular cli
-RUN npm install -g @angular/cli
-
-#### install project dependencies
-RUN npm install
-
-COPY . .
-
-RUN npm run package
-
-EXPOSE 3001
-CMD [ "npm", "run", "console" ]
-
-FROM maven:3.8.1-openjdk-17-slim
 
 WORKDIR /build
 
