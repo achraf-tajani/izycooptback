@@ -9,6 +9,7 @@
 #
 # docker run -i --rm -p 8081:8081 springboot/sample-izycooptBack
 ####
+FROM maven:3.8.1-openjdk-17-slim
 
 WORKDIR /build
 
@@ -21,7 +22,6 @@ RUN mvn package -Dmaven.test.skip=true
 
 FROM openjdk:11-jdk
 COPY --from=0 /build/target/izycooptBack-0.0.1-SNAPSHOT.jar /app/target/izycooptBack-0.0.1-SNAPSHOT.jar
-
 
 EXPOSE 8081
 ENTRYPOINT [ "java", "-jar", "/app/target/izycooptBack-0.0.1-SNAPSHOT.jar", "--server.port=8081" ]
