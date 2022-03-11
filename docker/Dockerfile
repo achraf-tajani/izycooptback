@@ -3,11 +3,11 @@
 #
 # Build the image with:
 #
-# docker build -f docker/Dockerfile -t springboot/sample-izycooptBack .
+# docker build -f docker/Dockerfile -t springboot/sample-izycooptback-app2 .
 #
 # Then run the container using:
 #
-# docker run -i --rm -p 8081:8081 springboot/sample-izycooptBack
+# docker run -i --rm -p 8081:8081 springboot/sample-izycooptback-app2
 ####
 FROM maven:3.8.1-openjdk-17-slim
 
@@ -21,7 +21,7 @@ COPY src src
 RUN mvn package -Dmaven.test.skip=true
 
 FROM openjdk:11-jdk
-COPY --from=0 /build/target/izycooptBack-0.0.1-SNAPSHOT.jar /app/target/izycooptBack-0.0.1-SNAPSHOT.jar
+COPY --from=0 /build/target/izycooptback-app2-0.0.1-SNAPSHOT.jar /app/target/izycooptback-app2-0.0.1-SNAPSHOT.jar
 
 EXPOSE 8081
-ENTRYPOINT [ "java", "-jar", "/app/target/izycooptBack-0.0.1-SNAPSHOT.jar", "--server.port=8081" ]
+ENTRYPOINT [ "java", "-jar", "/app/target/izycooptback-app2-0.0.1-SNAPSHOT.jar", "--server.port=8081" ]
