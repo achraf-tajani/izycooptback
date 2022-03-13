@@ -3,7 +3,7 @@ metadata:
   name: java-springboot
   version: 1.1.0
   attributes:
-    alpha.dockerimage-port: 8081
+    alpha.dockerimage-port: 8080
   displayName: Java Spring Boot
   description: Java Spring Boot using Maven
   tags: ["Java", "Spring"]
