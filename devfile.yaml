@@ -13,7 +13,7 @@ metadata:
   supportUrl: https://github.com/devfile-samples/devfile-support#support-information
 parent:
   id: java-springboot
-  registryUrl: "https://github.com/achraf-tajani/izycooptback.git"
+  registryUrl: "https://registry.devfile.io"
 components:
   - name: outerloop-build
     image:
