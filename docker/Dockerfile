@@ -3,11 +3,11 @@
 #
 # Build the image with:
 #
-# docker build -f docker/Dockerfile -t springboot/sample-izycooptBack .
+# docker build -f docker/Dockerfile -t springboot/sample-demo .
 #
 # Then run the container using:
 #
-# docker run -i --rm -p 8081:8081 springboot/sample-izycooptBack
+# docker run -i --rm -p 8081:8081 springboot/sample-demo
 ####
 FROM maven:3.8.1-openjdk-17-slim
 
